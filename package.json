@@ -1,0 +1,23 @@
+{
+  "name": "hky-project",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A project to learn how to write a frontend framework.",
+  "main": "index.js",
+  "scripts": {
+    "serve:examples": "npx http-server . -o ./examples/",
+    "test": "vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "workspaces": [
+    "packages/runtime",
+    "packages/loader",
+    "packages/compiler"
+  ],
+  "dependencies": {
+    "hky": "^1.0.0"
+  }
+}
