@@ -32,9 +32,16 @@ export function addEventListener(eventName, handler, element) {
 }
 
 
+/**
+ * Removes all event listeners added by the {@link addEventListeners} function from the specified element.
+ *
+ * @param {Object} listeners - An object containing event names as keys and their corresponding handler functions as values, which were returned by the {@link addEventListeners} function.
+ * @param {Element} el - The element from which the event listeners will be removed.
+ *
+ * @returns {void} - No return value.
+ */
 export function removeEventListeners(listeners, el) {
-
     Object.entries(listeners).forEach(([event, listener]) => {
         el.removeEventListener(event, listener);
-    })
+    });
 }

@@ -1,6 +1,7 @@
 import { destroyDom } from './destroy-dom';
 import { h, hFragment, lipsum, hString } from './h';
 import { mountDom } from './mount-dom';
+import { Dispatcher } from './dispacher';
 
 // console.log(h('div'));
 
@@ -42,8 +43,21 @@ const vdom = h('section', {}, [
 
 // console.log(JSON.stringify(MessageComponent('warnning', 'you create your first component!!!')))
 
-mountDom(vdom, $0);
-destroyDom(vdom);
+// mountDom(vdom, $0);
+// destroyDom(vdom);
+
+const dispatcher = new Dispatcher();
+
+const unsubscribe = dispatcher.subscribe('response', () => {console.log(`fine my friend thanks`);});
+const unsubscribe2 = dispatcher.subscribe('hi', (name) => {console.log(`hi ${name} how are you`);});
+dispatcher.afterEveryCommand(() => console.log('################################'))
+dispatcher.dispatch('hi','nabil');
+dispatcher.dispatch('response');
+unsubscribe2();
+unsubscribe();
+dispatcher.dispatch('hi','nabil');
+dispatcher.dispatch('response');
+
 
 
 
