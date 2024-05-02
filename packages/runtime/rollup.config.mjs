@@ -6,7 +6,7 @@ export default {
     plugins: [cleanup()],
     output: [
         {
-            file: 'dist/hky.js',
+            file: 'dist/naby.js',
             format: 'esm',
             plugins: [filesize()],
         },

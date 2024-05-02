@@ -1,4 +1,4 @@
-import {h, hFragment} from 'hky/dist';
+import {h, hFragment} from 'https://unpkg.com/naby@0.0.0';
 
 const login = () => {};
 

@@ -1,11 +1,11 @@
 {
-  "name": "hky",
-  "version": "1.0.0",
+  "name": "naby",
+  "version": "0.0.0",
   "description": "",
   "main": "dist/index.js",
   "type": "module",
   "files": [
-    "dist/index.js"
+    "dist/naby.js"
   ],
   "scripts": {
     "build": "rollup -c",
