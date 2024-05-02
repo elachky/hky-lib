@@ -44,7 +44,7 @@ function createTextNode(vDom, parentEl) {
  * @param {Element} parentEl - The parent element where the vDom will be mounted.
  */
 function createFragmentNode(vDom, parentEl) {
-    const { children } = vdom;
+    const { children } = vDom;
     vDom.el = parentEl;
     children.forEach(child => mountDom(child, parentEl));
 }

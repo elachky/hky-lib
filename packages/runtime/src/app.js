@@ -23,6 +23,7 @@ export function createApp({ state, view, reducers = {} }) {
     }
 
     function renderApp() {
+        // component will mount
         if (vDom) {
             destroyDom(vDom);
         }
@@ -33,6 +34,7 @@ export function createApp({ state, view, reducers = {} }) {
 
     return {
         mount(_parentEl) {
+            // before mount component
             parentEl = _parentEl;
             renderApp();
         },

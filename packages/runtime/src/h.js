@@ -3,7 +3,7 @@ import { withoutNulls } from "./utils/arrays"
 export const DOM_TYPES = {
     TEXT: 'text',
     ELEMENT: 'element',
-    FRAGEMENT: 'fragment',
+    FRAGMENT: 'fragment',
 }
 /**
  * Creates a virtual DOM element using the provided tag, props, and children.
@@ -32,7 +32,13 @@ export const h = (tag, props = {}, children = []) =>  {
  */
 function mapTextNodes(children) {
     return children.map(child => 
-        typeof child === 'string' ? hString(child) : child
+        typeof child === 'string' ||
+        typeof child === 'number' ||
+        typeof child === 'boolean' ||
+        typeof child === 'bigint' ||
+        typeof child === 'symbol'
+        ? hString(child) 
+        : child
     );
 }
 

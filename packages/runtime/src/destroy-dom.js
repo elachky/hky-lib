@@ -15,7 +15,7 @@ export function destroyDom(vdom) {
         case DOM_TYPES.ELEMENT:
             removeElementNode(vdom);
             break;
-        case DOM_TYPES.FRAGEMENT:
+        case DOM_TYPES.FRAGMENT:
             removeFragmentNodes(vdom);
             break;
         default:

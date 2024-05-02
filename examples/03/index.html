@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Page</title>
+    <script type="module">
+        import {h, hFragment, mountDom} from '../../packages/runtime/dist/naby.js';
+        // const {h, hFragment} = require('../../packages/runtime/dist/naby')
+        const login = () => {};
+
+        const increment = () => {};
+
+        const app = hFragment([
+            h('h1', { class: 'title' }, ['my counter']),
+            h('div', { class: 'container' }, [
+                h('button', { click: increment }, ['increment']),
+                h('span', undefined, ['0']),
+                h('button', { click: increment }, ['decrement']),
+            ])
+        ]);
+
+        mountDom(app, document.getElementById('app'));
+    </script>
 </head>
 <body>
     <div id="app"></div>

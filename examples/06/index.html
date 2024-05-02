@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+    <script type="module">
+        import {createApp, h, hFragment, hString } from '../../packages/runtime/dist/naby.js';
+
+        createApp({
+            state: 0,
+            reducers: {
+                add: (state, amount) => state + amount,
+                remove: (state, amount) => state - amount
+            },
+            view: (state, emit) => hFragment([
+                h(
+                    'button',
+                    {on: {click: ()=> emit('remove', 1)}},
+                    ['-']
+                ),
+                state,
+                h(
+                    'button',
+                    {on: {click: ()=> emit('add', 1)}},
+                    ['+']
+                ),
+            ])
+        }).mount(document.body);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
