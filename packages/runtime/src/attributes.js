@@ -76,8 +76,6 @@ export function removeStyle(element, key) {
 export function setAttribute(element, key, value) {
     if (value === null) {
         removeAttribute(element, key);
-    } else if (value.startsWith('data-')) {
-        element.dataset[key.replace('data-', '')] = value;
     } else {
         element[key] = value;
     }
